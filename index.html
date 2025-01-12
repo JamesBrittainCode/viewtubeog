@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViewTubeView</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <span style="color: #a020f0">View</span>Tube
+          </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
+        <div class="user-section">
+            <button id="upload-btn">Upload</button>
+           <div id="user-icon"></div>
+            <div id="login-signup">
+                <button id="login-btn">Login</button>
+                <button id="signup-btn">Sign Up</button>
+            </div>
+             <div id="user-profile" style="display:none;">
+               <span id="profile-username">Welcome, User!</span>
+                <button id="edit-profile-btn">Customize</button>
+                <button id="logout-btn">Logout</button>
+            </div>
+
+        </div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shorts</a></li>
+                <li><a href="#">Subscriptions</a></li>
+                <li><a href="#">Library</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <div id="login-modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close-modal">×</span>
+                    <h2>Login</h2>
+                     <input type="text" id="login-username" placeholder="Username">
+                    <input type="password" id="login-password" placeholder="Password">
+                    <button id="submit-login-btn">Log In</button>
+                </div>
+            </div>
+              <div id="signup-modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close-modal">×</span>
+                    <h2>Sign Up</h2>
+                    <input type="email" id="signup-email" placeholder="Email">
+                    <input type="text" id="signup-username" placeholder="Username">
+                    <input type="password" id="signup-password" placeholder="Password">
+                    <button id="submit-signup-btn">Sign Up</button>
+                </div>
+            </div>
+              <div id="upload-modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close-modal">×</span>
+                    <h2>Upload Video</h2>
+                    <input type="text" id="upload-title" placeholder="Video Title">
+                    <input type="file" id="upload-video" accept="video/*">
+                    <input type="file" id="upload-thumbnail" accept="image/*">
+                    <button id="submit-upload-btn">Upload</button>
+                </div>
+            </div>
+           <div id="profile-modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close-modal">×</span>
+                    <h2>Customize Profile</h2>
+                   <input type="text" id="edit-channel-name" placeholder="Channel Name">
+                   <input type="file" id="edit-channel-logo" accept="image/*" >
+                    <button id="submit-edit-profile">Save</button>
+                </div>
+            </div>
+             <div id="video-grid" class="video-grid">
+            </div>
+           <div id="video-page" style="display:none;">
+               <video id="video-player" controls></video>
+                 <h2 id="video-title"></h2>
+                  <p id="video-uploader"></p>
+                  <p id="video-views"></p>
+                  <div class="like-comment-area" >
+                      <button class="like-button" onclick="likeVideoOnPage()">Like (<span id="video-likes"></span>)</button>
+                      <button class="comment-button" onclick="commentVideoOnPage()">Comment</button>
+                  </div>
+                  <div id="comment-area">
+                  </div>
+                  <button id="back-to-main">Back</button>
+            </div>
+            <div id="user-profile-page" style="display:none;">
+                <h2 id="user-profile-name"></h2>
+                  <div id="user-profile-videos" class="video-grid">
+                  </div>
+                <button id="back-to-main-from-profile">Back</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
